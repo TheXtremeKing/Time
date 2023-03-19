@@ -319,3 +319,12 @@ void setSyncInterval(time_t interval){ // set the number of seconds between re-s
   syncInterval = (uint32_t)interval;
   nextSyncTime = sysTime + syncInterval;
 }
+
+void forceUpdate() //force to do a update asap
+{
+  nextSyncTime = sysTime;
+}
+
+time_t getSyncInterval(){ //get current configured sync interval
+  return syncInterval;
+}
